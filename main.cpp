@@ -15,7 +15,7 @@ int main()
 	sf::RenderWindow window(sf::VideoMode(1000, 800), "PiPaPong", sf::Style::Titlebar | sf::Style::Default);
 	sf::Event event;
 
-	//Game loop (stops when window closed) 1 time==1 frame 
+	//Game loop (stops when window closed) 1loop == 1frame 
 	while (window.isOpen())
 	{
 		//Event polling (Ereignisabfrage)
