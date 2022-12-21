@@ -1,47 +1,25 @@
 #include "main.h"
-#include <iostream>
-#include <SFML/Graphics.hpp>
-#include <SFML/Audio.hpp>
-#include <SFML/System.hpp>
-#include <SFML/Network.hpp>
-#include <SFML/Window.hpp>
+#include "Game.h"
 
-//using namespace std;
-//using namespace sf;
+/*
+	using namespace std;
+	using namespace sf;
+*/
 
 int main()
 {
-	//Create Window
-	sf::RenderWindow window(sf::VideoMode(1000, 800), "PiPaPong", sf::Style::Titlebar | sf::Style::Default);
-	sf::Event event;
+	//initialize game engine (Game)
+	Game game; 
 
 	//Game loop (stops when window closed) 1loop == 1frame 
-	while (window.isOpen())
+	while (game.running())
 	{
-		//Event polling (Ereignisabfrage)
-		while (window.pollEvent(event))
-		{
-			switch (event.type)
-			{
-			case sf::Event::Closed:
-				window.close(); 
-				break;
-			case sf::Event::KeyPressed:
-				if (event.key.code == sf::Keyboard::Escape)
-					window.close();
-			}
-		}
+		//Update 
+		game.update();
 
-		//Update based on polling
-
-
-		//Render frame 
-		window.clear(sf::Color(211, 211, 211)); //Clear old frame or else it becomes a mess 
-
-		//Draw new frame 
-		window.display(); //frame is done and can be displayed
-
+		//Render
+		game.render(); 
 	}
-	//End of game/application 
+	//End of game | application 
 	return 0;
 }
