@@ -26,6 +26,7 @@ public:
 
 	//Constructor | Destructor
 	Game();				//Constructor
+
 	virtual ~Game();	//Destructor
 
 	//Checks if game is running

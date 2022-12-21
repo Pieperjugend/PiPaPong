@@ -18,10 +18,14 @@ void Game::initWindow()
 			-width
 			-height
 			-title
+		Set Frameratelimit to 60fps 
+		disable vertical sync
 	*/
 	this->VideoMode.height = 1024;
 	this->VideoMode.width = 1024;
 	this->window = new sf::RenderWindow(sf::VideoMode(1024, 1024), "PiPaPong", sf::Style::Titlebar | sf::Style::Default);
+	this->window->setFramerateLimit(60); 
+	this->window->setVerticalSyncEnabled(false); 
 }
 
 //Constructors | Destructors
@@ -43,7 +47,7 @@ Game::Game()
 Game::~Game()
 {
 	/*
-	Closes window (Deconstructor)
+	Closes window (Destructor)
 	*/
 	delete this->window; 
 }
@@ -55,7 +59,6 @@ const bool Game::running() const
 		Checks if window is still open
 			-Window is open=true
 			-window is closed=false
-	
 	*/
 	return this->window->isOpen();
 }
@@ -85,15 +88,6 @@ void Game::update()
 	}
 }
 
-void Game::pollEvents() 
-{
-	/*
-		Waits for an Event
-		example: Escape = Close window
-	*/
-	this->pollEvents(); 
-}
-
 //projecting current state 
 void Game::render()
 {
@@ -104,7 +98,15 @@ void Game::render()
 			-draws new objects
 	*/
 	this->window->clear(sf::Color(75, 75, 75, 255));
-
 	//Draw game objects
 	this->window->display(); 
+}
+
+void Game::pollEvents()
+{
+	/*
+		Waits for an Event
+		example: Escape = Close window
+	*/
+	this->pollEvents();
 }
