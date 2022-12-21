@@ -5,13 +5,14 @@
 #include <SFML/System.hpp>
 #include <SFML/Network.hpp>
 #include <SFML/Window.hpp>
+#include <math.h>
 /*
 	Class acts as Game Engine 
 */
 class Game
 {
 private:
-
+	
 	//Window classes 
 	sf::RenderWindow* window;
 	sf::VideoMode VideoMode; 

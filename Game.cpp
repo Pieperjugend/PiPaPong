@@ -13,19 +13,19 @@ void Game::initVariables()
 void Game::initWindow() 
 {
 	/*
-		Creates window 
+		Creates window
 			-style
 			-width
 			-height
 			-title
-		Set Frameratelimit to 60fps 
-		disable vertical sync
+		Set Frameratelimit to 60fps
+		disable vertical sync or enable with true i dont know what is better jet
 	*/
 	this->VideoMode.height = 1024;
 	this->VideoMode.width = 1024;
 	this->window = new sf::RenderWindow(sf::VideoMode(1024, 1024), "PiPaPong", sf::Style::Titlebar | sf::Style::Default);
-	this->window->setFramerateLimit(60); 
-	this->window->setVerticalSyncEnabled(false); 
+	this->window->setFramerateLimit(60);
+	this->window->setVerticalSyncEnabled(false);
 }
 
 //Constructors | Destructors
