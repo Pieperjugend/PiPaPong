@@ -1,3 +1,3 @@
 #include "Player.h"
 
-int Player(); 
+Player; 
