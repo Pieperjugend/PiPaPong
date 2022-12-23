@@ -142,6 +142,9 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="dedicated_server.cpp" />
+    <ClCompile Include="server\main.cpp" />
+    <ClCompile Include="server\matchserv.cpp" />
+    <ClCompile Include="server\queue.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

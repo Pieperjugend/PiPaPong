@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Quelldateien\server">
+      <UniqueIdentifier>{64466f8b-3f12-402b-a37c-5e7aeb7be026}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -34,6 +37,18 @@
     </ClCompile>
     <ClCompile Include="Player.cpp">
       <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="dedicated_server.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="server\queue.cpp">
+      <Filter>Quelldateien\server</Filter>
+    </ClCompile>
+    <ClCompile Include="server\main.cpp">
+      <Filter>Quelldateien\server</Filter>
+    </ClCompile>
+    <ClCompile Include="server\matchserv.cpp">
+      <Filter>Quelldateien\server</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

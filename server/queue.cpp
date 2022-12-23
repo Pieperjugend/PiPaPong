@@ -1,5 +1,6 @@
 #include <iostream>
 #include <queue>
+#include <vector>
 #include <SFML/Network.hpp>
 
 int main()
@@ -40,6 +41,9 @@ int main()
                     sf::TcpSocket* player = clientQueue.front();
                     clientQueue.pop();
                     player->send(packet);
+
+                    // Hier soll der Code rein, was beim Game start passieren soll 
+
                     delete player;
                 }
             }
@@ -54,3 +58,4 @@ int main()
 
     return 0;
 }
+
