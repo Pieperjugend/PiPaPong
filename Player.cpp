@@ -38,6 +38,23 @@ void Player::moveUp()
 	_Source.y = Up;					//Move Direction enum
 	_Sprite.move(0, -_Speed);		//Move Player Sprite 
 
+	if (_AnimClock.getElapsedTime() > _AnimTime)
+	{
+		_Sprite.setTextureRect(sf::IntRect(_Source.x * 32, _Source.y * 32, 32, 32 )) //Crop Sprite
+	}
+
+}
+void Player::moveDown()
+{
 
 }
 
+void Player::moveLeft()
+{
+
+}
+
+void Player::moveRight() 
+{
+	
+} 
