@@ -21,9 +21,9 @@ void Game::initWindow()
 		Set Frameratelimit to 60fps
 		disable vertical sync or enable with true i dont know what is better jet
 	*/
-	this->VideoMode.height = 1024;
-	this->VideoMode.width = 1024;
-	this->window = new sf::RenderWindow(sf::VideoMode(1024, 1024), "PiPaPong", sf::Style::Titlebar | sf::Style::Default);
+	this->VideoMode.height = 1200;	// Y 
+	this->VideoMode.width = 700;	// X				X	 Y
+	this->window = new sf::RenderWindow(sf::VideoMode(1200, 700), "PiPaPong", sf::Style::Titlebar | sf::Style::Default);
 	this->window->setFramerateLimit(60);
 	this->window->setVerticalSyncEnabled(false);
 }
