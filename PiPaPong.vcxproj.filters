@@ -38,21 +38,6 @@
     <ClCompile Include="Player.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
-    <ClCompile Include="dedicated_server.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
-    <ClCompile Include="server\queue.cpp">
-      <Filter>Quelldateien\server</Filter>
-    </ClCompile>
-    <ClCompile Include="server\main.cpp">
-      <Filter>Quelldateien\server</Filter>
-    </ClCompile>
-    <ClCompile Include="server\matchserv.cpp">
-      <Filter>Quelldateien\server</Filter>
-    </ClCompile>
-    <ClCompile Include="server\Client.cpp">
-      <Filter>Quelldateien\server</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="README.md">
