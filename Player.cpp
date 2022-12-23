@@ -40,21 +40,78 @@ void Player::moveUp()
 
 	if (_AnimClock.getElapsedTime() > _AnimTime)
 	{
-		_Sprite.setTextureRect(sf::IntRect(_Source.x * 32, _Source.y * 32, 32, 32 )) //Crop Sprite
-	}
+		_Sprite.setTextureRect(sf::IntRect(_Source.x * 32, _Source.y * 32, 32, 32)); //Crop Sprite
 
+		//Animation 
+			_Source.x++;
+		if (_Source.x * 32 >= _Sprite.getTexture()->getSize().x)
+		{
+			_Source.x = 0;
+		}
+		_AnimClock.restart();
+	}
 }
+
 void Player::moveDown()
 {
+	_Source.y = Down;				//Move Direction enum
+	_Sprite.move(0, -_Speed);		//Move Player Sprite 
+
+	if (_AnimClock.getElapsedTime() > _AnimTime)
+	{
+		_Sprite.setTextureRect(sf::IntRect(_Source.x * 32, _Source.y * 32, 32, 32)); //Crop Sprite
+
+		//Animation 
+		_Source.x++;
+		if (_Source.x * 32 >= _Sprite.getTexture()->getSize().x)
+		{
+			_Source.x = 0;
+		}
+		_AnimClock.restart();
+	}
 
 }
 
 void Player::moveLeft()
 {
+	_Source.y = Left;				//Move Direction enum
+	_Sprite.move(0, -_Speed);		//Move Player Sprite 
 
+	if (_AnimClock.getElapsedTime() > _AnimTime)
+	{
+		_Sprite.setTextureRect(sf::IntRect(_Source.x * 32, _Source.y * 32, 32, 32)); //Crop Sprite
+
+		//Animation 
+		_Source.x++;
+		if (_Source.x * 32 >= _Sprite.getTexture()->getSize().x)
+		{
+			_Source.x = 0;
+		}
+		_AnimClock.restart();
+	}
 }
 
 void Player::moveRight() 
 {
-	
+	_Source.y = Left;				//Move Direction enum
+	_Sprite.move(0, -_Speed);		//Move Player Sprite 
+
+	if (_AnimClock.getElapsedTime() > _AnimTime)
+	{
+		_Sprite.setTextureRect(sf::IntRect(_Source.x * 32, _Source.y * 32, 32, 32)); //Crop Sprite
+
+		//Animation 
+		_Source.x++;
+		if (_Source.x * 32 >= _Sprite.getTexture()->getSize().x)
+		{
+			_Source.x = 0;
+		}
+		_AnimClock.restart();
+	}
 } 
+
+void Player::setSpeed(float TEMP_Speed, sf::Time TEMP__AnimTime)	//Sprint Speed
+{
+	_Speed = TEMP_Speed;
+	_AnimTime = TEMP__AnimTime;
+}
