@@ -142,7 +142,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="dedicated_server.cpp" />
-    <ClCompile Include="server\Client.cpp" />
+    <ClCompile Include="server\client.cpp" />
     <ClCompile Include="server\main.cpp" />
     <ClCompile Include="server\matchserv.cpp" />
     <ClCompile Include="server\queue.cpp" />
