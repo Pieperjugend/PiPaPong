@@ -27,6 +27,15 @@
     <ClInclude Include="Player.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
+    <ClInclude Include="server\matchserv.h">
+      <Filter>Quelldateien\server</Filter>
+    </ClInclude>
+    <ClInclude Include="server\queue.h">
+      <Filter>Quelldateien\server</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -38,10 +47,21 @@
     <ClCompile Include="Player.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
+    <ClCompile Include="server\client.cpp">
+      <Filter>Quelldateien\server</Filter>
+    </ClCompile>
+    <ClCompile Include="server\main.cpp">
+      <Filter>Quelldateien\server</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="README.md">
       <Filter>Quelldateien</Filter>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="PiPaPong.rc">
+      <Filter>Ressourcendateien</Filter>
+    </ResourceCompile>
   </ItemGroup>
 </Project>
