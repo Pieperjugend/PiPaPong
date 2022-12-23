@@ -26,9 +26,9 @@ public:
 	//Public functions
 
 	//Constructor | Destructor
-	Game();				//Constructor
+	Game();						//Constructor
 
-	virtual ~Game();	//Destructor
+	virtual ~Game();			//Destructor
 
 	//Checks if game is running
 	const bool running() const; 
