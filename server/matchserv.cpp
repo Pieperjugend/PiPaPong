@@ -14,8 +14,9 @@ int main()
         return 1;
     }
 
-    // Vector für Client-Verbindungen erstellen
+    // Vector für Client-Verbindungen und -Positionen erstellen
     std::vector<sf::TcpSocket*> clients;
+    std::vector<std::pair<int, int>> positions;
 
     // Hauptschleife des Servers
     while (true) {
@@ -23,22 +24,34 @@ int main()
         sf::TcpSocket* client = new sf::TcpSocket;
         if (listener.accept(*client) == sf::Socket::Done) {
             // Client-Verbindung wurde hergestellt
-            std::cout << "MatchServ - Client verbunden: " << client->getRemoteAddress() << '\n';
+            std::cout << "Client verbunden: " << client->getRemoteAddress() << '\n';
 
-            // Client-Verbindung hinzufügen
+            // Client-Verbindung und -Position hinzufügen
             clients.push_back(client);
+            positions.emplace_back(0, 0);
         }
 
-        // Nachrichten von Clients empfangen und an alle anderen Clients weiterleiten
-        for (auto it = clients.begin(); it != clients.end(); ) {
-            sf::TcpSocket* client = *it;
+        // Nachrichten von Clients empfangen und verarbeiten
+        for (size_t i = 0; i < clients.size(); ++i) {
+            sf::TcpSocket* client = clients[i];
+            std::pair<int, int>& position = positions[i];
 
             sf::Packet packet;
             if (client->receive(packet) == sf::Socket::Done) {
-                // Nachricht empfangen, an alle anderen Clients weiterleiten
-                for (auto it2 = clients.begin(); it2 != clients.end(); ++it2) {
-                    if (it2 != it) {
-                        (*it2)->send(packet);
+                // Nachricht empfangen, verarbeiten
+                std::string message;
+                packet >> message;
+
+                if (message == "sync") {
+                    // Synchronisationsnachricht empfangen, Positionsdaten des Clients aktualisieren
+                    packet >> position.first >> position.second;
+                }
+                else {
+                    // Andere Nachricht empfangen, an alle anderen Clients weiterleiten
+                    for (size_t j = 0; j < clients.size(); ++j) {
+                        if (i != j) {
+                            clients[j]->send(packet);
+                        }
                     }
                 }
             }
