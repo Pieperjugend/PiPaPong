@@ -1,4 +1,4 @@
-# PipaPong (PP)
+# PiPaPong (PPP)
 Willkommen bei PingPong Royale, dem ultimativen Battle Royale-Erlebnis! 
 Wir haben uns bemüht, jedes Element des Originalspiels zu verbessern, indem wir es in C++ von zwei Vollidioten programmieren ließen. 
 Aber keine Sorge, wir sind sicher, dass das Endergebnis großartig wird! Stelle dich der Herausforderung und werde zum ultimativen PingPong-Champion, während du dich durch Bugs, Abstürze und unerwartete Fehler kämpfst. 
